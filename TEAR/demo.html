@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>TEAR Demo</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156162365-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-156162365-1');
+    </script>
+</head>
+
+<body>
+
+    <!-- Title -->
+    <div class="container" style="max-width:1200px;">
+        <div class='row mt-5 mb-3'>
+            <div class='col text-center'>
+                <p class="h3 font-weight-normal">Audio samples from "TEAR: A Cross-modal Pre-trained Text Encoder Enhanced by Acoustic Representations for Speech Synthesis "</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width:1100px;">
+        <!-- authors -->
+        <div class='row text-center h5 font-weight-normal pl-0 pr-0 mb-4' style="font-style:italic">
+                <a class="col-md-2 col-xs-4 text-dark" style='margin:auto;' ><span>Anonymous</span></a>
+        <div>
+            <hr>
+            <div class='col text-center'>
+                <p class='h4 font-weight-bold '>Abstract</p>
+
+                <div class="container" style="max-width:1100px; margin-top: 20px; margin-bottom: 40px">
+                    <p style='line-height:1.3; font-size:large; text-align: justify'>
+                        Text encoders play an important role in text-to-speech (TTS) by analyzing  text input and converting it into linguistic representations. In order to generate expressive speech from text, pre-training text encoders on large amounts of data has recently become a solution to generate richer and more efficient linguistic representations. However, existing pre-trained text encoders only use the self-supervised target on the text data, without considering the relationship between text and speech modalities during pre-training stage. In this paper, we propose TEAR, a cross-modal pre-trained text encoder enhanced by  acoustic representations used for TTS. Besides the unlabeled text data, TEAR also uses the paired text-speech data to perform cross-modal pre-training, where the acoustic representations are used to bring additional prosody knowledge to the linguistic representation. This enables TEAR to better adapt to downstream TTS tasks compared to text-only pre-trained text encoders. TEAR was pre-trained on 130 million Chinese and English unlabeled sentences, as well as 740,000 Chinese text-speech pairs. The fine-tuning experiments on TTS tasks indicate that the proposed TEAR can encode more efficient and complete linguistic representations compared to the text-only pre-trained encoders, leading to the generation of more natural and expressive speech.
+                    </p>
+                    <p style='line-height:1.3; font-size:large; text-align: justify'>
+                    </p>
+                    <p><img align="center" src="resources/proposed.jpg" alt="JPG Image" style="  display: block ;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 100%;">
+                         <figcaption>The overall pre-training flowchart of TEAR.</figcaption>
+                    </p>
+                    <br>
+                    <p><img align="center" src="resources/finetune.jpg" alt="JPG Image" style="  display: block ;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 40%;">
+                         <figcaption>The fine-tuning flowchart of TEAR in a typical end-to-end TTS system.</figcaption>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+		<hr>
+	  <h2>Comparison among TEAR and other text encoders within the FastSpeech backbone</h2>
+      <h3>BC19 Demo</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>TEAR</th><th>Phn Enc</th><th>PnG Enc</th><th>Data2vec-text Enc</th><th>GT-mel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="6"><span>1: 但是，北大的刘德寰教授说，这个理论在中国的某些市场上不见得适用哒。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/BC19/TEAR/10036203_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Phn/10036203_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/PnG/10036203_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Data2vec/10036203_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/GT/10036203_gen.wav" type="audio/wav"></audio></td>
+      
+          </tr>
+          <tr><td colspan="6"><span>2: 那说到这我就明白啦，为什么去工作又叫上班，就是把自己纳入到某种预先排列好的秩序里面呀。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/BC19/TEAR/10036510_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Phn/10036510_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/PnG/10036510_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Data2vec/10036510_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/GT/10036510_gen.wav" type="audio/wav"></audio></td>
+          </tr>
+
+             <tr><td colspan="6"><span>3: 但是正好相反啊，她到今天不过两千年，而距离大金字塔两千五百年。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/BC19/TEAR/10035505_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Phn/10035505_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/PnG/10035505_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Data2vec/10035505_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/GT/10035505_gen.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr><td colspan="6"><span>4: 文章里没有故事知识和道理，文字通常会给我们的这些东西它全没有。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/BC19/TEAR/10044005_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Phn/10044005_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/PnG/10044005_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Data2vec/10044005_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/GT/10044005_gen.wav" type="audio/wav"></audio></td>
+          </tr>
+          
+          <tr><td colspan="6"><span>5: 对，思考的结果也许夹杂了更多的偏见独断蛮不讲理呀。</span>
+         </td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/BC19/TEAR/10045908_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Phn/10045908_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/PnG/10045908_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/Data2vec/10045908_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/BC19/GT/10045908_gen.wav" type="audio/wav"></audio></td>
+          </tr>
+      </table>
+
+     <h3>Sanmu Demo</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>TEAR</th><th>Phn Enc</th><th>PnG Enc</th><th>Data2vec-text Enc</th><th>GT-mel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="6"><span>1: 眼神古怪地撇了一眼徐凤年，就跟看白痴一般。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Sanmu/TEAR/14530002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Phn/14530002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/PnG/14530002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Data2vec/14530002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/GT/14530002_gen.wav" type="audio/wav"></audio></td>                
+
+          </tr>
+         <tr><td colspan="6"><span>2: 一拈就夺了过去，随手一抛，斜割去大片芭蕉。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Sanmu/TEAR/15250002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Phn/15250002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/PnG/15250002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Data2vec/15250002_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/GT/15250002_gen.wav" type="audio/wav"></audio></td>   
+
+           <tr><td colspan="6"><span>3: 光头汉子，从盘子里扯出一块肉，笑嘻嘻道。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Sanmu/TEAR/A_01.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Phn/B_01.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/PnG/C_01.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Data2vec/D_01.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/GT/E_01.wav" type="audio/wav"></audio></td>   
+          </tr>
+          <tr><td colspan="6"><span>4: 张晓宇能这么对她，已经让她很高兴，如果换了别的人，昊羽嫣真不知道会发生什么事。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Sanmu/TEAR/A_25.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Phn/B_25.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/PnG/C_25.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Data2vec/D_25.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/GT/E_25.wav" type="audio/wav"></audio></td>   
+          </tr>
+          <tr><td colspan="6"><span>5: 咔嚓，下方倒塌的墙壁突兀地裂开一道缝隙，一抹森冷的刀芒穿刺而出，袭向几乎近在咫尺的公羊奎。</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Sanmu/TEAR/A_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Phn/B_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/PnG/C_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/Data2vec/D_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Sanmu/GT/E_10.wav" type="audio/wav"></audio></td>   
+          </tr>
+      </table>
+
+  <h3>Robert Demo</h3>
+      <table>
+        <thead>
+          <tr>
+            <br>
+            <th>TEAR</th><th>Data2vec-text Enc</th><th>GT-mel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="6"><span>1: Oh well, nobody is perfect right, he is still a really good friend.</span></td></tr>
+          <tr>
+            <td><audio controls=""><source src="resources/audio/Robert/TEAR/00010061_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/Data2vec/00010061_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/GT/00010061_gen.wav" type="audio/wav"></audio></td>
+
+          </tr>
+          <tr><td colspan="6"><span>2: The apartment is really a problem. It's hard to fine someone to look after it. What do you plan to do?</span></td></tr>
+          <tr>
+             <td><audio controls=""><source src="resources/audio/Robert/TEAR/00010565_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/Data2vec/00010565_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/GT/00010565_gen.wav" type="audio/wav"></audio></td>
+
+          </tr>
+           <tr><td colspan="6"><span>3: How are your students doing?</span></td></tr>
+          <tr>
+             <td><audio controls=""><source src="resources/audio/Robert/TEAR/00010830_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/Data2vec/00010830_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/GT/00010830_gen.wav" type="audio/wav"></audio></td>
+
+              </tr>
+           <tr><td colspan="6"><span>4: So, what do you really enjoy doing?</span></td></tr>
+          <tr>
+             <td><audio controls=""><source src="resources/audio/Robert/TEAR/00011617_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/Data2vec/00011617_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/GT/00011617_gen.wav" type="audio/wav"></audio></td>
+
+             </tr>
+           <tr><td colspan="6"><span>5: Yes,we went to the top of the hill in the park, and looked out over the sea.</span></td></tr>
+          <tr>
+             <td><audio controls=""><source src="resources/audio/Robert/TEAR/00012334_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/Data2vec/00012334_gen.wav" type="audio/wav"></audio></td>
+            <td><audio controls=""><source src="resources/audio/Robert/GT/00012334_gen.wav" type="audio/wav"></audio></td>
+
+
+          </tr>
+      </table>
+
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>
